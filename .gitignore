@@ -1,0 +1,6 @@
+/$RECYCLE.BIN
+*.zip
+*.exe
+*.ini
+*.db
+/__pycache__/
