@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vuurwerk_player</title>
+    <style>
+            html{
+                min-height:100%;
+                position:relative;
+            }
+            body{
+                height:100%;
+            }
+            #player{
+                position:absolute;
+                top:0;
+                bottom:50;
+                left:0;
+                right:0;
+                overflow:hidden;
+            }
+        </style>
+    <script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+</head>
+{% block body %}{% endblock %}

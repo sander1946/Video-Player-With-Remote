@@ -2,8 +2,8 @@ import sqlite3
 
 
 try:
-    connection = sqlite3.connect(f"databases/database.db")
-    with open(f"sql/database.sql") as file:
+    connection = sqlite3.connect(f"databases/videos.db")
+    with open(f"sql/videos.sql") as file:
         connection.executescript(file.read())
     connection.commit()
     connection.close()
