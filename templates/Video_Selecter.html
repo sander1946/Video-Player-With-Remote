@@ -2,17 +2,166 @@
 <html>
     <head>
         <title>Register - studentsander.nl</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="my registration page">
         <meta name="keywords" content="register">
         <meta charset="UTF-8">
+
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+
+            main {
+              position: relative;
+              height: auto;
+            }
+
+            #CodeInput {
+              background-image: url('/static/search.png');
+              background-position: 10px 12px;
+              background-repeat: no-repeat;
+              width: 100%;
+              font-size: 16px;
+              padding: 12px 20px 12px 40px;
+              border: 1px solid #ddd;
+              margin-bottom: 12px;
+            }
+
+            #myUL {
+              list-style-type: none;
+              padding: 0;
+              margin: 0;
+            }
+
+            #myUL li a {
+              border: 1px solid #ddd;
+              margin-top: -1px; /* Prevent double borders */
+              background-color: #f6f6f6;
+              padding: 12px;
+              text-decoration: none;
+              font-size: 18px;
+              color: black;
+              display: block
+            }
+
+            #myUL li a:hover:not(.header) {
+              background-color: #eee;
+            }
+
+            img {
+              width: 50px;
+              aspect-ratio: auto;
+            }
+        </style>
     </head>
     <body>
-    <div>
-    <form action="" method="POST">
-        <label>code:</label>
-        <input name="code" type="text" placeholder="43232"><br><br>
-        <input type="submit" value="Create User"><br><br>
-    </form>
-    </div>
+    <main>
+        <div id="screen">
+            <input type="text" id="CodeInput" onkeyup="myFunction()" placeholder="Zoek op naam of nummer" title="Type een code">
+            <ul id="myUL">
+                <li><a href="?code=506">506 - Meter Pakket</a></li>
+                <li><a href="?code=741">741 - Screaming Missiles 100</a></li>
+                <li><a href="?code=745">745 - Screaming Missiles 500</a></li>
+                <li><a href="?code=1150">1150 - The General Bulkpack</a></li>
+                <li><a href="?code=1183">1183 - Thunderking 3.0</a></li>
+                <li><a href="?code=1205">1205 - Assorted Volcano</a></li>
+                <li><a href="?code=1215">1215 - Huilfonteinen</a></li>
+                <li><a href="?code=1232">1232 - Dragonfly</a></li>
+                <li><a href="?code=1234">1234 - Ground Spinners</a></li>
+                <li><a href="?code=1239">1239 - Crackling Ground Flower</a></li>
+                <li><a href="?code=1315">1315 - Shishing Crackling</a></li>
+                <li><a href="?code=1474">1474 - Disturbed</a></li>
+                <li><a href="?code=1481">1481 - Idaho</a></li>
+                <li><a href="?code=1489">1489 - Alaska</a></li>
+                <li><a href="?code=1492">1492 - Colorado</a></li>
+                <li><a href="?code=1494">1494 - Texas</a></li>
+                <li><a href="?code=1495">1495 - Montana</a></li>
+                <li><a href="?code=1496">1496 - California</a></li>
+                <li><a href="?code=1535">1535 - Double Conquest</a></li>
+                <li><a href="?code=1539">1539 - Super Triple Forge</a></li>
+                <li><a href="?code=1654">1654 - Great Fountains</a></li>
+                <li><a href="?code=1660">1660 - Dreamcatcher</a></li>
+                <li><a href="?code=1693">1693 - Mad Twister</a></li>
+                <li><a href="?code=1701">1701 - Remix</a></li>
+                <li><a href="?code=1704">1704 - Oberon</a></li>
+                <li><a href="?code=1707">1707 - Skysweeper</a></li>
+                <li><a href="?code=1709">1709 - Whiplash</a></li>
+                <li><a href="?code=1712">1712 - Pearlodian</a></li>
+                <li><a href="?code=1719">1719 - Fire Throne</a></li>
+                <li><a href="?code=1722">1722 - Stars over Vienna</a></li>
+                <li><a href="?code=1726">1726 - Cool Beauty</a></li>
+                <li><a href="?code=1743">1743 - Mastermind</a></li>
+                <li><a href="?code=1750">1750 - Dekoy</a></li>
+                <li><a href="?code=1782">1782 - Space Troopers</a></li>
+                <li><a href="?code=1785">1785 - The Eagle & The Falcon</a></li>
+                <li><a href="?code=1789">1789 - Booster 500</a></li>
+                <li><a href="?code=1804">1804 - Vulkan X</a></li>
+                <li><a href="?code=1805">1805 - Howling Wolf</a></li>
+                <li><a href="?code=1812">1812 - Pure Silver</a></li>
+                <li><a href="?code=1896">1896 - Silver Salute</a></li>
+                <li><a href="?code=4520">4520 - Iconic</a></li>
+                <li><a href="?code=5028">5028 - Pili Cracker</a></li>
+                <li><a href="?code=5033">5033 - Knetterlint</a></li>
+                <li><a href="?code=5048">5048 - Blazing Vulcan</a></li>
+                <li><a href="?code=5053">5053 - Bengal Flames</a></li>
+                <li><a href="?code=5056">5056 - Crazy Whistler</a></li>
+                <li><a href="?code=5071">5071 - Spring Flower</a></li>
+                <li><a href="?code=5112">5112 - Rebel Pack</a></li>
+                <li><a href="?code=5130">5130 - Epic pakket</a></li>
+                <li><a href="?code=6201">6201 - Merkur</a></li>
+                <li><a href="?code=6235">6235 - Comet Attack (gratis artikel €30,00 - €69,99)</a></li>
+                <li><a href="?code=6236">6236 - Spot Light (gratis artikel €70,00 - €139,99)</a></li>
+                <li><a href="?code=6237">6237 - Total Thriller (gratis artikel €140,00 - €219,99)</a></li>
+                <li><a href="?code=6238">6238 - Entire Eruption (gratis artikel €220,00 - €299,99)</a></li>
+                <li><a href="?code=6239">6239 - Night Breaker (gratis artikel €300,00 - €449,99)</a></li>
+                <li><a href="?code=6240">6240 - Flying Vanguard (gratis artikel €450,00 - €749,99)</a></li>
+                <li><a href="?code=6401">6401 - Familie Topper</a></li>
+                <li><a href="?code=6404">6404 - Familie Special</a></li>
+                <li><a href="?code=6405">6405 - Familie Juweel</a></li>
+                <li><a href="?code=6422">6422 - Familie Glorie</a></li>
+                <li><a href="?code=6424">6424 - Familie Triomf</a></li>
+                <li><a href="?code=6426">6426 - Familie Tijd</a></li>
+                <li><a href="?code=6429">6429 - Familie Trip</a></li>
+                <li><a href="?code=6601">6601 - Pyro League</a></li>
+                <li><a href="?code=6604">6604 - Riptide</a></li>
+                <li><a href="?code=6606">6606 - Blue 'm up</a></li>
+                <li><a href="?code=6608">6608 - Turn Key Project</a></li>
+                <li><a href="?code=6612">6612 - Furious</a></li>
+                <li><a href="?code=6613">6613 - Airbrush</a></li>
+                <li><a href="?code=6614">6614 - Knock Down</a></li>
+                <li><a href="?code=6615">6615 - Tycoon</a></li>
+                <li><a href="?code=6617">6617 - Ghostbuster</a></li>
+                <li><a href="?code=6624">6624 - The Exile</a></li>
+                <li><a href="?code=6627">6627 - The Throne</a></li>
+                <li><a href="?code=6845">6845 - Infinity</a></li>
+                <li><a href="?code=7158">7158 - Artillery</a></li>
+                <li><a href="?code=7701">7701 - Savage</a></li>
+                <li><a href="?code=7703">7703 - Chaos</a></li>
+                <li><a href="?code=7704">7704 - Centurion</a></li>
+                <li><a href="?code=8208">8208 - Midnight special</a></li>
+            </ul>
+        </div>
+    </main>
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("CodeInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
     </body>
 </html>
+
+

@@ -77,13 +77,12 @@ def player():
 
 @app.route('/', methods=('GET', 'POST'))
 def index():
-    if request.method == "POST":
-        if "code" in request.form:
-            code = request.form["code"]
-            print(code)
-            write_global_code(code)
+    if request.args.get("code") is not None:
+        code = request.args.get("code")
+        print(code)
+        write_global_code(code)
     return render_template('Video_Selecter.html')
 
 
 if __name__ == '__main__':
-    app.run(host="192.168.2.130", port=5000)
+    app.run(host="192.168.2.170", port=80)
