@@ -12,6 +12,7 @@
                 height:100%;
             }
             #player{
+            z-index: 950;
                 position:absolute;
                 top:0;
                 bottom:50;
@@ -19,6 +20,22 @@
                 right:0;
                 overflow:hidden;
             }
+            .container {
+            z-index: 10;
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+}
+
+.center {
+z-index: 11;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
         </style>
     <script type="text/javascript"
         src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">

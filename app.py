@@ -7,7 +7,7 @@ app.secret_key = app.config["SECRET_KEY"]
 
 
 def read_global_code():
-    f = open("code.txt", "r")
+    f = open("static/code.txt", "r")
     glob_code = f.read()
     f.close()
     return glob_code
@@ -44,7 +44,7 @@ def before_request():
 @app.route("/drop")
 def drop_session():
     session.clear()
-    write_global_code(0)
+    write_global_code(str(0))
     return redirect(url_for("index"))
 
 
@@ -84,5 +84,33 @@ def index():
     return render_template('Video_Selecter.html')
 
 
+@app.route('/test', methods=('GET', 'POST'))
+def test():
+    vuurwerk_list = [
+        ["501", "test 1", "youtube.com/test1"],
+        ["502", "test 2", "youtube.com/test2"],
+    ]
+    return render_template('test.html')
+
+
+@app.route('/_get_list', methods=['GET'])
+def get_list():
+    connection = connect_to_database()
+    with connection:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM `videos`")
+            list_info = cursor.fetchall()
+            new_list_info = []
+            for x in list_info:
+                a = []
+                counter = 0
+                for y in x:
+                    if counter != 0:
+                        a.append(x[y])
+                    counter += 1
+                new_list_info.append(a)
+    return jsonify(vuurwerk_info=new_list_info)
+
+
 if __name__ == '__main__':
-    app.run(host="192.168.2.170", port=80)
+    app.run(host="192.168.2.130", port=80)
