@@ -48,7 +48,7 @@
                 var img=document.createElement('img');
                 a.appendChild(img)
                 img.src = array[i][2]
-                a.href = "?code=" + array[i][0];
+                a.href = "javascript:sendCode(" + array[i][0] + ");";
                 a.innerHTML = a.innerHTML + array[i][0] + " - " + array[i][1]
             }
   		});
@@ -71,5 +71,19 @@
             }
         }
     </script>
+    <script>
+        function sendCode(sCode) {
+          var request = new XMLHttpRequest();
+          request.open("POST", "http://192.168.2.130/send_code");
+
+          request.setRequestHeader('Content-type', 'application/json');
+
+          var params = {
+            code: sCode
+          }
+
+          request.send(JSON.stringify(params));
+        }
+      </script>
 </body>
 </html>

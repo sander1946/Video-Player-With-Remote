@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, render_template, request, redirect, url_for, session
 import pymysql.cursors
-import yaml
+import json
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "438324438324438324"
@@ -24,7 +24,7 @@ def write_global_code(glob_code):
 def connect_to_database():
     connection = None
     try:
-        connection = pymysql.connect(host='192.168.2.18',
+        connection = pymysql.connect(host='192.168.2.172',
                                      user='Hubo',
                                      password='Hubo2015',
                                      database="videos",
@@ -47,19 +47,12 @@ def before_request():
         write_global_code(session["code"])
 
 
-@app.route("/webhook", methods=["POST"])
-def webhook():
-    # print(request.data)
-    code = read_global_code()
-    connection = connect_to_database()
-    with connection:
-        with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM `videos` WHERE `code` = %s",
-                           [code])
-            vuurwerk_info = cursor.fetchone()
-            duration = vuurwerk_info["duration"]
-            return {"next_code": code,
-                    "duration": duration}
+@app.route("/send_code", methods=["POST"])
+def send_code():
+    json_data = json.loads(request.data)
+    code = json_data["code"]
+    write_global_code(str(code))
+    return {"data": "test"}
 
 
 @app.route("/drop")
