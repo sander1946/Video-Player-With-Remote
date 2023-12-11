@@ -4,3 +4,4 @@
 *.ini
 *.db
 /__pycache__/
+*.mp4
