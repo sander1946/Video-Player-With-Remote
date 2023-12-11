@@ -24,7 +24,7 @@ def write_global_code(glob_code):
 def connect_to_database():
     connection = None
     try:
-        connection = pymysql.connect(host='192.168.2.172',
+        connection = pymysql.connect(host='192.168.2.18',
                                      user='Hubo',
                                      password='Hubo2015',
                                      database="videos",
