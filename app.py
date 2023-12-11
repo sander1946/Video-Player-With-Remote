@@ -14,7 +14,7 @@ def read_global_code():
 
 
 def write_global_code(glob_code):
-    f = open("code.txt", "w")
+    f = open("static/code.txt", "w")
     f.write(glob_code)
     f.close()
 
@@ -22,7 +22,7 @@ def write_global_code(glob_code):
 def connect_to_database():
     connection = None
     try:
-        connection = pymysql.connect(host='192.168.2.171',
+        connection = pymysql.connect(host='192.168.2.172',
                                      user='Hubo',
                                      password='Hubo2015',
                                      database="videos",
@@ -37,8 +37,6 @@ def connect_to_database():
             return connection
         else:
             return ConnectionError
-
-
 
 
 @app.before_request
@@ -58,7 +56,6 @@ def drop_session():
 def get_video():
     code = read_global_code()
     if code != 0:
-        print(f"code: {code}")
         connection = connect_to_database()
         with connection:
             with connection.cursor() as cursor:
@@ -70,7 +67,6 @@ def get_video():
                 # img = vuurwerk_info["img"]
                 start = vuurwerk_info["start"]
                 duration = vuurwerk_info["duration"]
-                print(f"vid: {vid}")
         return jsonify(video=f"https://www.youtube-nocookie.com/embed/{vid}&start={start}&autoplay=1&mute=1",
                        duration=duration)
     return jsonify(video="None", duration=2500)
@@ -85,18 +81,8 @@ def player():
 def index():
     if request.args.get("code") is not None:
         code = request.args.get("code")
-        print(code)
         write_global_code(code)
     return render_template('Video_Selecter.html')
-
-
-@app.route('/test', methods=('GET', 'POST'))
-def test():
-    vuurwerk_list = [
-        ["501", "test 1", "youtube.com/test1"],
-        ["502", "test 2", "youtube.com/test2"],
-    ]
-    return render_template('test.html')
 
 
 @app.route('/_get_list', methods=['GET'])
