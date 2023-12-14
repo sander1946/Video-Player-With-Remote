@@ -45,7 +45,7 @@ def play_video(path, duration_local):
 
 if __name__ == "__main__":
     video_player = None
-    webhook_url = "http://192.168.2.130/webhook"
+    webhook_url = "http://127.0.0.1/webhook"
     code = "0"
     duration = -1
 
