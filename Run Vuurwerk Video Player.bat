@@ -1,4 +1,4 @@
-start /max http://127.0.0.1/player
-flask run -h 127.0.0.1 -p 80
+start /max http://192.168.2.18/player
+flask run -h 192.168.2.18 -p 80
 
 

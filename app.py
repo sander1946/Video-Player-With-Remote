@@ -24,7 +24,7 @@ def write_global_code(glob_code):
 def connect_to_database():
     connection = None
     try:
-        connection = pymysql.connect(host='127.0.0.1',
+        connection = pymysql.connect(host='192.168.2.172',
                                      user='Hubo',
                                      password='Hubo2015',
                                      database="videos",
@@ -115,4 +115,4 @@ def get_list():
 
 
 if __name__ == '__main__':
-    app.run(host="127.0.0.1", port=80)
+    app.run(host="192.168.2.130", port=80)
