@@ -22,24 +22,13 @@ def write_global_code(glob_code):
 
 
 def connect_to_database():
-    connection = None
-    try:
-        connection = pymysql.connect(host='192.168.2.172',
+    connection = pymysql.connect(host='127.0.0.1',
                                      user='Hubo',
                                      password='Hubo2015',
                                      database="videos",
                                      charset='utf8mb4',
                                      cursorclass=pymysql.cursors.DictCursor)
-        return connection
-    except pymysql.Error as e:
-        print(f"Error while connecting to MySQL database: {e}")
-    finally:
-        if connection is not None:
-            print(f"Connection to the database was successful")
-            return connection
-        else:
-            return ConnectionError
-
+    return connection
 
 @app.before_request
 def before_request():

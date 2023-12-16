@@ -2,7 +2,7 @@
 {% block body %}
 
 <script type="text/javascript">
-var intervalID = setInterval(update_values,1000);
+var intervalID = setInterval(update_values,50000);
 
   function update_values() {
   		$.getJSON($SCRIPT_ROOT + '/_get_video',
@@ -10,7 +10,7 @@ var intervalID = setInterval(update_values,1000);
   			$('#result').text(data.video)
   			setTimeout(
   				function(){
-  				window.location.reload(1);
+  				window.location.reload(10000);
   				}, (data.duration*1000));
   		});
     };
