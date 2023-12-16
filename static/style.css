@@ -1,3 +1,13 @@
+@keyframes background-fade {
+  0% {
+    background-color: #939393;
+  }
+  100% {
+    background-color: #f6f6f6;
+  }
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -26,13 +36,33 @@ main {
 
 #myUL li a {
   border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
+  margin-top: -1px;
+  
+  /* Prevent double borders */
   background-color: #f6f6f6;
   padding: 12px;
   text-decoration: none;
   font-size: 18px;
   color: black;
-  display: block
+  display: block;
+}
+
+#Currently_playing_wrapper {
+border: 1px solid #ddd;
+  margin-top: -1px;
+
+  /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+}
+
+
+#myUL li a.animating {
+  animation: background-fade 1s;
 }
 
 #myUL li a:hover:not(.header) {
@@ -42,4 +72,17 @@ main {
 img {
   width: 150px;
   aspect-ratio: auto;
+}
+
+#Currently_playing_wrapper {
+margin: 0px 0px 10px;
+}
+
+#Currently_playing img {
+  width: 75px;
+  aspect-ratio: auto;
+}
+
+#Currently_playing p {
+  margin: 0px 0px 10px;
 }

@@ -22,13 +22,14 @@ def write_global_code(glob_code):
 
 
 def connect_to_database():
-    connection = pymysql.connect(host='127.0.0.1',
-                                     user='Hubo',
-                                     password='Hubo2015',
-                                     database="videos",
-                                     charset='utf8mb4',
-                                     cursorclass=pymysql.cursors.DictCursor)
+    connection = pymysql.connect(host='192.168.2.17',
+                                 user='Hubo',
+                                 password='Hubo2015',
+                                 database="videos",
+                                 charset='utf8mb4',
+                                 cursorclass=pymysql.cursors.DictCursor)
     return connection
+
 
 @app.before_request
 def before_request():
@@ -104,4 +105,4 @@ def get_list():
 
 
 if __name__ == '__main__':
-    app.run(host="192.168.2.130", port=80)
+    app.run(host="192.168.2.9", port=80)
