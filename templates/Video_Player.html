@@ -25,6 +25,7 @@ var intervalID = setInterval(update_values,50000);
 	<span id="result"></span>
 	<script>
 		$.getJSON($SCRIPT_ROOT + '/_get_video',
+
 		function(data) {
 			document.getElementById("player").src = data.video;
 		});
