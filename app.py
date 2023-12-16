@@ -22,7 +22,7 @@ def write_global_code(glob_code):
 
 
 def connect_to_database():
-    connection = pymysql.connect(host='192.168.2.17',
+    connection = pymysql.connect(host='127.0.0.1',
                                  user='Hubo',
                                  password='Hubo2015',
                                  database="videos",
