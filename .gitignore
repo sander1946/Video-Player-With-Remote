@@ -6,3 +6,5 @@
 /__pycache__/
 *.mp4
 debug.log
+.idea/misc.xml
+.idea/Video-Player-With-Remote.iml
